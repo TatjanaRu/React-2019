@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
-import placeHolderImage from "../../assets/image-placeholder.svg";
 import "./UserCard.css";
 
 class UserCard extends Component{
     render(){
         const { name, description, image } = this.props;
         return (
-            <div className="UserCard container">
+            <div className="UserCard container UserCard__first-last">
                 <div className="row">
                     <div className="col-4 justify-content-center ">
                         <img className="UserCard__image" src={image} alt="user image" />

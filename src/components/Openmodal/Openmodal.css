@@ -1,0 +1,11 @@
+.Openmodal{
+    display: block !important; 
+}
+
+.Openmodal__content{
+    width: 100%;
+}
+
+.Openmodal__button{
+    width: 120px;
+}

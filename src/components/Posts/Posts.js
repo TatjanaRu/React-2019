@@ -1,24 +1,23 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+
 import placeHolderImage from "../../assets/image-placeholder.svg";
 import PostCard from "../Post/PostCard"
 //import "./Posts.css";
 const posts = [
     {   title: "First title",
-        descripton: "Here is description part.",
+        description: "Here is description part.",
         image: placeHolderImage},
 
         {   title: "Second title",
-        descripton: "Here is description part.",
+        description: "Here is description part.",
         image: placeHolderImage},
 
         {   title: "Third title",
-        descripton: "Here is description part.",
+        description: "Here is description part.",
         image: placeHolderImage},
 
         {   title: "Fourth title",
-        descripton: "Here is description part.",
+        description: "Here is description part.",
         image: placeHolderImage},
 
         {   title: "Fifth title",
@@ -31,12 +30,11 @@ class Posts extends Component{
     // it will be react component
     render(){
         return (
-            <div className="Posts">
-                <h1>My Instagram</h1>
-                <h2>Example app</h2>            
+            <div className="Posts pt-1">        
                 {/* posts.map(post, index) =>{ <PostCard  key={index}; ...}} */}
-                {posts.map(post =>( //post is one item from posts, map - izsauc funciju ar rezult'atu katram masiva elementam vienu reizi
-                    <PostCard 
+                {posts.map((post,index) => ( //post is one item from posts, map - izsauc funciju ar rezult'atu katram masiva elementam vienu reizi
+                    <PostCard
+                        key={index} 
                         title={post.title}
                         description={post.description}
                         image={post.image}
