@@ -57,7 +57,8 @@ class Register extends Component {
                         </div>
                         <button
                             onClick={() => onRegister(username, email, password)}
-                            className="btn btn-dark">Login</button>
+                            type="button"
+                            className="btn btn-dark">register</button>
                     </form>
                 </div>
             </div >

@@ -5,19 +5,20 @@ import UserCard from "../UserCard/UserCard"
 import "./UserList.css";
 
 const users = [
-    {name:"user name",description:"some description of user ",image:placeHolderImage},
-    {name:"user name",description:"some description of user ",image:placeHolderImage},
-    {name:"user name",description:"some description of user ",image:placeHolderImage}
+    { name: "user name", description: "some description of user ", image: placeHolderImage },
+    { name: "user name", description: "some description of user ", image: placeHolderImage },
+    { name: "user name", description: "some description of user ", image: placeHolderImage }
 ];
 
-class UserList extends Component{
+class UserList extends Component {
     // copies the original constructor from component
     // it will be react component
-    render(){
+    render() {
         return (
-            <div className="UserList">          
-                {users.map(user =>( 
-                    <UserCard 
+            <div className="UserList">
+                {users.map((user, index) => (
+                    <UserCard
+                        key={index}
                         name={user.name}
                         description={user.description}
                         image={user.image}

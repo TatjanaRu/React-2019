@@ -1,14 +1,14 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./Login.css";
 
-class Login extends Component{
-    constructor(){
+class Login extends Component {
+    constructor() {
         super();
 
-    this.state= {
-        email: "",
-        password: ""
-    }
+        this.state = {
+            email: "",
+            password: ""
+        }
     }
 
     // onEmailChange = (e) => {
@@ -21,11 +21,12 @@ class Login extends Component{
 
     // do the same as previous two
     onInputChange = e => {
-        this.setState({ [e.target.name]: e.target.value});
+        this.setState({ [e.target.name]: e.target.value });
     }
-    
-    render(){
+
+    render() {
         const { email, password } = this.state;
+        const { onLogin } = this.props;
         return (
             <div className="Login">
                 <div className="Login__content">
@@ -33,28 +34,31 @@ class Login extends Component{
                     <form>
                         <div className="form-group">
                             <label>email</label>
-                            <input 
+                            <input
                                 onChange={this.onInputChange}
-                                className="form-control" 
+                                className="form-control"
                                 type="text"
                                 name="email"
                                 value={email} />
-                                {email}
+                            {email}
                         </div>
                         <div className="form-group">
                             <label>password</label>
-                            <input 
+                            <input
                                 onChange={this.onInputChange}
-                                className="form-control" 
-                                type="password" 
+                                className="form-control"
+                                type="password"
                                 name="password"
                                 value={password} />
-                                {password}
-                        </div>  
-                        <button className="btn btn-dark">Login</button>
+                            {password}
+                        </div>
+                        <button
+                            onClick={() => onLogin(email, password)}
+                            type="button"
+                            className="btn btn-dark">login</button>
                     </form>
                 </div>
-            </div>
+            </div >
         )
     }
 }
